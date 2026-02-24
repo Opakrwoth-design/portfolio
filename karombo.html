@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-KK1R9dZf4A9+Q5TjTujk5e8+gVZy7XgM1E9sG4FQb8TdrxUjT9qZ5g8Yb6l3WxJkshtC4cU5F8jWkQKAm71rWg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/img/ll.jpg">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+                }
+            }
+        };
+    </script>
+
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <title>Opakrwoth Joshua Odongo | Karombo Website</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-poppins overflow-x-hidden">
+
+    <!-- ===== PAGE CONTENT START ===== -->
+    <section class="flex flex-col mb-4  items-center justify-start pt-6 px-5 space-y-6">
+
+        <!-- Navbar -->
+        <nav
+            class="w-full max-w-6xl h-[60px] flex justify-between items-center px-5 border border-white/10 bg-white/10 backdrop-blur-md rounded shadow-lg">
+            <h1 class="text-lg font-semibold">Opakrwoth Joshua Odongo</h1>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="/home.html" class="hover:text-gray-300 transition">Home</a>
+                <a href="#contact" class="hover:text-gray-300 transition">Contact</a>
+            </div>
+        </nav>
+        <!-- Glassmorphic Karombo Work Section -->
+        <div class="w-full max-w-6xl border border-white/10 bg-white/10 backdrop-blur-md rounded shadow-lg flex flex-col items-center text-center p-6 space-y-6"
+            data-aos="fade-up">
+
+            <!-- Image -->
+            <img src="/img/Screenshot 2025-11-09 221343.png" alt="Karombo Preview"
+                class="w-full max-w-md h-auto object-cover rounded-lg">
+
+            <!-- Text Description -->
+            <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl">
+                I contributed to the Karombo Hospitality and Travels website by designing the logo, creating a clean and
+                modern front-end, and ensuring a user-friendly experience. The project involved transforming design
+                concepts into interactive pages while maintaining a consistent visual style.
+            </p>
+
+            <!-- Visit Website Link -->
+            <a href="https://karombo-hospitality-and-travels-ltd.netlify.app/"
+                class="inline-block w-fit text-white font-semibold py-2 px-6 rounded border border-white/10 shadow-lg backdrop-blur-lg bg-gradient-to-b from-white/10 to-gray-700/10 hover:from-white/20 hover:to-gray-800/20 transition-all duration-300">
+                Visit Karombo Site
+            </a>
+        </div>
+
+
+        <!-- Contact Section (Single Centered Container) -->
+        <div id="contact"
+            class="w-full max-w-6xl h-[400px] border border-white/10 bg-white/10 backdrop-blur-md rounded shadow-lg flex flex-col items-center justify-center text-center p-6 space-y-6"
+            data-aos="fade-up">
+
+            <!-- Logo Image -->
+            <img src="/img/creativity.png" alt="Logo" class="w-20 h-20 object-contain mt-4">
+
+            <!-- Text -->
+            <h2 class="text-white text-2xl md:text-3xl font-semibold mt-4">Have a project in mind?</h2>
+
+            <!-- Email Button -->
+            <a href="mailto:joshopakrwoth@gmail.com"
+                class="inline-block w-fit text-white font-semibold py-2 px-6 rounded border border-white/10 shadow-lg backdrop-blur-lg bg-gradient-to-b from-white/10 to-gray-700/10 hover:from-white/20 hover:to-gray-800/20 transition-all duration-300">
+                joshopakrwoth@gmail.com
+            </a>
+        </div>
+
+        <!-- Reference Bar -->
+        <div class="w-full max-w-6xl  h-auto md:h-[60px] border border-white/10 bg-white/10 backdrop-blur-md rounded shadow-lg flex flex-col md:flex-row items-center justify-between px-5 py-3 md:py-0 text-white text-base font-medium"
+            data-aos="fade-up">
+
+            <!-- Name -->
+            <span class="order-2 md:order-1 mt-1 md:mt-0 text-center md:text-left">
+                Opakrwoth Joshua Odongo
+            </span>
+
+            <!-- Phone Number -->
+            <span class="order-1 md:order-2 text-center md:text-right">
+                +256 768 977 622
+            </span>
+
+        </div>
+
+    </section>
+
+    <script>
+        function updateAOS() {
+            const leftCard = document.getElementById('left-card');
+            const rightCard = document.getElementById('right-card');
+
+            if (window.innerWidth < 768) { // small screens
+                if (leftCard) leftCard.setAttribute('data-aos', 'fade-up');
+                if (rightCard) rightCard.setAttribute('data-aos', 'fade-up');
+            } else { // medium+ screens
+                if (leftCard) leftCard.setAttribute('data-aos', 'fade-right');
+                if (rightCard) rightCard.setAttribute('data-aos', 'fade-left');
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            updateAOS();
+            AOS.refresh();
+        });
+
+        window.addEventListener('load', () => {
+            updateAOS();
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+    </script>
+
+</body>
+
+</html>
